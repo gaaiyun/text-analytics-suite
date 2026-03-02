@@ -1,23 +1,22 @@
 # Text Analytics Suite
 
-📝 **综合文本分析工具集 - NLP 数据处理神器**
+📝 **文本分析工具集 - NLP 数据处理神器**
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Tests: 17/17](https://img.shields.io/badge/tests-17%2F17%20passed-brightgreen.svg)](tests/)
 
 ---
 
 ## 📋 项目概述
 
-Text Analytics Suite 是一个**综合文本分析工具集**，提供情感分析、关键词提取、实体识别、文本摘要等 NLP 功能。基于 Streamlit 的交互式仪表板让文本分析变得简单直观。
+Text Analytics Suite 是一个**综合文本分析工具集**，提供情感分析、关键词提取、实体识别、文本摘要等 NLP 功能。
 
 **核心特点**：
-- 📝 **5 大核心功能** - 情感/关键词/实体/摘要/分类
+- 📝 **多语言支持** - 中文/英文文本分析
+- 🎯 **5 大核心功能** - 情感/关键词/实体/摘要/分类
 - 📊 **Streamlit UI** - 交互式分析界面
 - 🔄 **批量处理** - 文档流水线分析
-- 💾 **多格式导出** - CSV/JSON/Markdown 报告
-- ✅ **完整测试** - 17/17 单元测试通过
+- 💾 **多格式导出** - CSV/JSON/报告
 
 ---
 
@@ -63,14 +62,11 @@ Text-Analytics-Suite/
 │   ├── summarizer.py   # 文本摘要
 │   └── classifier.py   # 文本分类
 ├── scripts/            # 命令行脚本
-├── pipeline/           # 批量处理
+├── pipeline/           # ⭐ 新增 批量处理
 │   └── document_analyzer.py
-├── dashboard.py        # Streamlit 界面
-├── tests/              # 单元测试
-│   └── test_analytics.py  # 17/17 通过 ✅
-├── utils/              # 工具函数
-├── requirements.txt    # 依赖
-└── README.md           # 本文档
+├── dashboard.py        # ⭐ Streamlit 界面
+├── utils/
+└── README.md
 ```
 
 ---
@@ -86,7 +82,7 @@ from processors.sentiment import SentimentAnalyzer
 
 analyzer = SentimentAnalyzer()
 result = analyzer.analyze("Excellent product, highly recommend!")
-# {'sentiment': 'positive', 'score': 0.92}
+print(result)  # {'sentiment': 'positive', 'score': 0.92}
 ```
 
 ### 2. 关键词提取 🔑
@@ -98,6 +94,7 @@ from processors.keywords import KeywordExtractor
 
 extractor = KeywordExtractor()
 keywords = extractor.extract(text, top_k=5)
+print(keywords)  # ['AI', 'machine learning', 'data', ...]
 ```
 
 ### 3. 实体识别 🏷️
@@ -161,7 +158,7 @@ category = classifier.classify(text)
 
 ---
 
-## 🔄 文档批量分析
+## 🔄 文档流水线 ⭐ 新增
 
 批量处理文本文档：
 
@@ -190,26 +187,6 @@ df = analyzer.analyze_all('.txt')
 
 ---
 
-## 🧪 测试
-
-运行所有测试：
-
-```bash
-pytest tests/ -v
-```
-
-**测试结果**: 17/17 通过 ✅
-
-```
-test_sentiment_analysis.py::test_positive_sentiment PASSED
-test_sentiment_analysis.py::test_negative_sentiment PASSED
-test_keyword_extraction.py::test_extract_words PASSED
-test_entity_recognition.py::test_extract_organization PASSED
-...
-```
-
----
-
 ## 💡 使用场景
 
 | 场景 | 功能 | 输出 |
@@ -218,7 +195,6 @@ test_entity_recognition.py::test_extract_organization PASSED
 | 新闻监控 | 实体识别 + 关键词 | 关键事件提取 |
 | 文档整理 | 批量分析 | 分类 + 摘要 |
 | 市场调研 | 文本分类 | 主题分布 |
-| 社交媒体监控 | 情感 + 实体 | 品牌声誉分析 |
 
 ---
 
@@ -227,7 +203,6 @@ test_entity_recognition.py::test_extract_organization PASSED
 - [NLTK 文档](https://www.nltk.org/)
 - [spaCy 文档](https://spacy.io/)
 - [TextBlob 文档](https://textblob.readthedocs.io/)
-- [Streamlit 文档](https://docs.streamlit.io/)
 
 ---
 
@@ -237,26 +212,6 @@ test_entity_recognition.py::test_extract_organization PASSED
 - ✅ 添加 Streamlit Dashboard
 - ✅ 添加文档批量分析流水线
 - ✅ 完善情感分析和实体识别可视化
-- ✅ 添加 17 个单元测试（100% 通过）
-- ✅ 完善 README 文档
-
----
-
-## 👤 作者
-
-**GitHub**: [gaaiyun](https://github.com/gaaiyun)
-
-**技能展示**：
-- 🔧 Python 全栈开发
-- 📊 NLP/文本分析
-- 💼 商业分析
-- 🚀 快速原型开发
-
----
-
-## 📄 许可证
-
-MIT License
 
 ---
 

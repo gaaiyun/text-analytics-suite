@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Output files
+output/
+results/
+*.csv
+*.json
+*.xlsx
+
+# Test
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Secrets (NEVER commit these!)
+API_KEYS.md
+api_keys.json
+*.key
+*.pem
+
+# Memory files (NEVER commit these!)
+memory/
+MEMORY.md
+
+# Config (keep examples, not actual configs)
+!*.example
+!*.sample
+config.yaml
+secrets.json
