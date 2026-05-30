@@ -120,22 +120,20 @@ python scripts/ner.py --file document.txt --output entities.json
 python scripts/summarize.py --file article.txt --length 200
 ```
 
-## 5. 展示价值
+## 5. 能力概览
 
-### NLP 能力 ⭐⭐⭐⭐⭐
+### NLP 能力
 - 多种 NLP 任务
 - 中英文支持
-- 高准确率
 
-### 文本处理能力 ⭐⭐⭐⭐⭐
+### 文本处理能力
 - 数据清洗
 - 特征提取
 - 结果可视化
 
-### 工程能力 ⭐⭐⭐⭐⭐
+### 工程能力
 - 模块化设计
 - 易于扩展
-- 完整文档
 
 ## 6. 依赖项
 
@@ -160,4 +158,3 @@ python -m spacy download en_core_web_sm
 ---
 
 _基于 Transformers, spaCy, NLTK 开发_
-_OpenClaw Skill 封装版本_
