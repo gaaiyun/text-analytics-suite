@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      # 只装跑测试真正需要的依赖（轻路径）：
+      # - pandas        test_analytics 用
+      # - textblob      英文情感 / 强制 textblob backend 用
+      # - vaderSentiment 英文 auto 路由用（缺则退化 textblob）
+      # advanced_keywords 仅用标准库；中文情感缺 snownlp 时自动退化到内置 lexicon。
+      # spacy / streamlit / snownlp 等重依赖测试用不到，不装。
+      - name: Install test dependencies
+        run: pip install pytest pandas textblob vaderSentiment
+
+      - name: Run tests
+        run: python -m pytest tests/ -o addopts="" -v
